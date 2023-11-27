@@ -1,11 +1,10 @@
 ﻿using Microsoft.AspNetCore.Identity;
 using System.ComponentModel.DataAnnotations;
 
-namespace TravelAgencyAPP.Models
+namespace TravelAgencyAPP.Models.Data
 {
     public class User : IdentityUser
     {
-        public int Id { get; set; }
 
         [Required(ErrorMessage = "Введите фамилию")]
         [Display(Name = "Фамилия")]
@@ -23,9 +22,6 @@ namespace TravelAgencyAPP.Models
 
         [Display(Name = "Дата увольнения")]
         public DateTime DateDismissal { get; set; }
-
-        [Display(Name = "Идентификатор роли")]
-        public byte IdRight { get; set; }
 
 
         //навигационные свойства

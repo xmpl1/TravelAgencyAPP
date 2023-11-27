@@ -1,6 +1,7 @@
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using TravelAgencyAPP.Models;
+using TravelAgencyAPP.Models.Data;
 
 var builder = WebApplication.CreateBuilder(args);
 
