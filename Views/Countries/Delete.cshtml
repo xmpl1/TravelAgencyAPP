@@ -1,0 +1,42 @@
+﻿@model TravelAgencyAPP.Models.Data.Country
+
+@{
+    ViewData["Title"] = "Удаление - Страны";
+}
+
+<nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a asp-controller="Home" asp-action="Index">Главная</a></li>
+        <li class="breadcrumb-item"><a asp-controller="Countries" asp-action="Index">Страны</a></li>
+        <li class="breadcrumb-item active">Удаление</li>
+    </ol>
+</nav>
+
+<h3>
+    <a class="btn text-dark" asp-action="Index" title="Вернуться к списку">
+        <i class="fas fa-arrow-left"></i>
+    </a>
+    Удаление страны
+</h3>
+
+
+<div>
+    <h4>
+        Вы уверены, что желаете удалить запись?<br />
+        Все связанные данные будут удалены!
+    </h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.CountryName)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.CountryName)
+        </dd>
+    </dl>
+    
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="Id" />
+        <input type="submit" value="Удалить" class="btn btn-danger" />
+    </form>
+</div>

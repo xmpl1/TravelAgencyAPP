@@ -11,5 +11,6 @@ namespace TravelAgencyAPP.Models
         {
             Database.EnsureCreated();
         }
+        public DbSet<Country>Countries { get; set; }
     }
 }

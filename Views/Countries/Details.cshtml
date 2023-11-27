@@ -1,0 +1,28 @@
+﻿@model TravelAgencyAPP.Models.Data.Country
+
+@{
+    ViewData["Title"] = "Страны";
+}
+
+<h3>
+    <a class="btn text-dark" asp-action="Index" title="Вернуться к списку">
+        <i class="fas fa-arrow-left"></i>
+    </a>
+    Просмотр страны
+</h3>
+
+<div>
+
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.CountryName)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.CountryName)
+        </dd>
+    </dl>
+</div>
+<div>
+
+
+</div>
