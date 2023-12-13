@@ -53,7 +53,8 @@ namespace TravelAgencyAPP.Controllers
 
             if (_context.Hotels
                 .Where(f => f.IdCountry == model.IdCountry &&
-                    f.HotelName == model.HotelName)
+                    f.HotelName == model.HotelName &&
+                    f.Review == model.Review)
                 .FirstOrDefault() != null)
             {
                 ModelState.AddModelError("", "Такое название отеля уже существует");

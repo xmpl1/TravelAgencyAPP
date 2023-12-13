@@ -1,0 +1,61 @@
+﻿@model TravelAgencyAPP.ViewModels.Tours.EditToursViewModel
+
+@{
+    ViewData["Title"] = "Изменение - Туры";
+}
+
+<nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a asp-controller="Home" asp-action="Index">Главная</a></li>
+        <li class="breadcrumb-item"><a asp-controller="Tours" asp-action="Index">Туры</a></li>
+        <li class="breadcrumb-item active">Изменение</li>
+    </ol>
+</nav>
+
+<h3>
+    <a class="btn text-dark" asp-action="Index" title="Вернуться к списку">
+        <i class="fas fa-arrow-left"></i>
+    </a>
+    Изменение туры
+</h3>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Id" />
+            <div class="mb-3">
+                <label asp-for="TourName" class="control-label"></label>
+                <input asp-for="TourName" class="form-control" />
+                <span asp-validation-for="TourName" class="text-danger"></span>
+            </div>
+            @* <div class="mb-3">
+                <label asp-for="IdCountry" class="control-label"></label>
+                <select asp-for="IdCountry" class="form-control" asp-items="ViewBag.IdCountry"></select>
+                <span asp-validation-for="IdCountry" class="text-danger"></span>
+            </div> *@
+            <div class="mb-3">
+                <label asp-for="IdHotel" class="control-label"></label>
+                <select asp-for="IdHotel" class="form-control" asp-items="ViewBag.IdHotel"></select>
+                <span asp-validation-for="IdHotel" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="NumberOfNights" class="control-label"></label>
+                <input asp-for="NumberOfNights" class="form-control" />
+                <span asp-validation-for="NumberOfNights" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="IdUser" class="control-label"></label>
+                <select asp-for="IdUser" class="form-control" asp-items="ViewBag.IdUser"></select>
+                <span asp-validation-for="IdUser" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

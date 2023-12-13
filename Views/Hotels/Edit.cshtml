@@ -25,32 +25,32 @@
         <form asp-action="Edit">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <input type="hidden" asp-for="Id" />
-            <div class="form-group">
+            <div class="mb-3">
                 <label asp-for="HotelName" class="control-label"></label>
                 <input asp-for="HotelName" class="form-control" />
                 <span asp-validation-for="HotelName" class="text-danger"></span>
             </div>
-            <div class="form-group">
+            <div class="mb-3">
                 <label asp-for="NumberOfStars" class="control-label"></label>
                 <input asp-for="NumberOfStars" class="form-control" />
                 <span asp-validation-for="NumberOfStars" class="text-danger"></span>
             </div>
-            <div class="form-group">
+            <div class="mb-3">
                 <label asp-for="Rating" class="control-label"></label>
                 <input asp-for="Rating" class="form-control" />
                 <span asp-validation-for="Rating" class="text-danger"></span>
             </div>
-            <div class="form-group">
+            <div class="mb-3">
                 <label asp-for="Review" class="control-label"></label>
                 <input asp-for="Review" class="form-control" />
                 <span asp-validation-for="Review" class="text-danger"></span>
             </div>
-            <div class="form-group">
+            <div class="mb-3">
                 <label asp-for="IdCountry" class="control-label"></label>
                 <select asp-for="IdCountry" class="form-control" asp-items="ViewBag.IdCountry"></select>
                 <span asp-validation-for="IdCountry" class="text-danger"></span>
             </div>
-            <div class="form-group">
+            <div class="mb-3">
                 <input type="submit" value="Сохранить" class="btn btn-primary" />
             </div>
         </form>

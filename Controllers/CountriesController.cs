@@ -22,12 +22,27 @@ namespace TravelAgencyAPP.Controllers
         }
 
         // GET: Countries
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index(string sortOrder, string searchString)
         {
-            var appCtx = _context.Countries
-              .OrderBy(f => f.CountryName);
+            ViewData["NameSortParm"] = String.IsNullOrEmpty(sortOrder) ? "country_desc" : "";
+            ViewData["CurrentFilter"] = searchString;
 
-            return View(await appCtx.ToListAsync());
+            var countries = from c in _context.Countries
+                           select c;
+            if (!String.IsNullOrEmpty(searchString))
+            {
+                countries = countries.Where(s => s.CountryName.Contains(searchString));
+            }
+            switch (sortOrder)
+            {
+                case "country_desc":
+                    countries = countries.OrderByDescending(c => c.CountryName);
+                    break;
+                default:
+                    countries = countries.OrderBy(c => c.CountryName);
+                    break;
+            }
+            return View(await countries.AsNoTracking().ToListAsync());
         }
 
         // GET: Countries/Details/5
